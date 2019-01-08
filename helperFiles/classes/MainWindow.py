@@ -47,7 +47,7 @@ class MainWindow(QMainWindow):
         self.lengthOfFlowline = 1
         self.flowlines = []
         self.flowlineMarkers = []
-        self.integratorPerMarker = 10
+        self.integratorPerMarker = 1
 
         '''
         Side widget with button
@@ -240,7 +240,7 @@ class MainWindow(QMainWindow):
                 self.distanceLineEdit.setReadOnly(True)
                 self.flowlineDistance = int(self.distanceLineEdit.text()) * 1000
                 self.lengthOfFlowline = int(self.flowlineDistance / float(self.spatialResolutionLineEdit.text()))
-                self.integratorPerMarker = int(math.ceil(10000 / (float(self.spatialResolutionLineEdit.text()))))
+                #self.integratorPerMarker = int(math.ceil(10000 / (float(self.spatialResolutionLineEdit.text()))))
                 xClickPosition = e.pos().x()
                 yClickPosition = e.pos().y()
 
@@ -308,8 +308,15 @@ class MainWindow(QMainWindow):
                     (velFlowline[:,0] - surfFlowline[:,0]) **2 +
                     (velFlowline[:,1] - surfFlowline[:,1]) **2
                 )
-
                 print distance
+                grad = np.absolute(np.gradient(distance))
+                maxIndex = np.argmax(grad)
+				
+				
+
+				
+				
+				
 
 
 

@@ -8,9 +8,10 @@ def main(argv):
     f = h5py.File('output.h5', 'r')
     totalArray = []
 
-    for key in range(15):
+    for key in range(32):
         for array in f[str(key)][:]:
             totalArray.append(array)
+        print key
 
 
     

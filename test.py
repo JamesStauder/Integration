@@ -90,7 +90,7 @@ def integ(index, xArray, returnDict):
     f.close()
 
 
-    sxInt = createInterp(surfGrad[1], xData, yData)
+    sxInt = createInterp(-1 * surfGrad[1], xData, yData)
     syInt = createInterp(surfGrad[0], xData, yData)
     surfIntegrator = FlowIntegrator(sxInt, syInt)
 

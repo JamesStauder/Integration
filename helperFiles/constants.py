@@ -1,5 +1,4 @@
 import pyqtgraph as pg
-from dolfin import Constant
 
 
 mapCoord = {'x0': 0, 'y0': 0, 'x1': 10018, 'y1': 17946,
@@ -28,8 +27,3 @@ brownPlotPen = pg.mkPen(color=(92, 64, 51), width=2)
 dataFileName = './data/GreenlandInBedCoord_V2.h5'
 cmFileName = './data/dataCMValues_V2.h5'
 
-dt_float = 5.0  # Time step
-thklim = 10.0
-eps_reg = 1e-5  # Regularization parameter
-dt = Constant(dt_float)
-theta = Constant(0.5)  # Crank-Nicholson parameter
